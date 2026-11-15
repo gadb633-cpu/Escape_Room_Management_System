@@ -1,5 +1,6 @@
 from display.shaw_main_menu import shaw_main_menu
 from Logic_Escape_Room.Room_Management import Room_Management
+from Logic_Escape_Order.order_management import order_management
 from Helper_functions_and_validations.inputs import get_num
 def main():
     status_loop = True
@@ -10,7 +11,7 @@ def main():
             case 1:
                 Room_Management()
             case 2:
-                pass
+                order_management()
             case 3:
                 pass
             case 4:
