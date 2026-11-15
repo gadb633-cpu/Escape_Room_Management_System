@@ -6,3 +6,4 @@ def display_all_rooms(path):
         print("\n")
         for key,value in d.items():
             print(f"{key},{value}")
+            
