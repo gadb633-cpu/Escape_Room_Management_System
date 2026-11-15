@@ -16,9 +16,9 @@ def order_management():
             case 3:
                 display_item("booking_id","./db/bookings.json")
             case 4:
-                pass
+                display_item("customer_name","./db/bookings.json")
             case 5:
-                pass
+                display_item("booking_date","./db/bookings.json")
             case 6:
                 pass
             case 7:
