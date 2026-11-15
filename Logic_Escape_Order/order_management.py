@@ -1,6 +1,6 @@
 from display.shaw_orders_menu import shaw_orders_menu
 from Helper_functions_and_validations.inputs import get_num,get_str
-from display.display_all_orders  import display_all_orders
+from display.display_all_orders  import display_all_items
 def order_management():
     status_loop = True
     while status_loop:
@@ -10,7 +10,7 @@ def order_management():
             case 1:
                 pass
             case 2:
-                display_all_orders("./db/bookings.json")
+                display_all_items("./db/bookings.json")
             case 3:
                 pass
             case 4:
