@@ -10,14 +10,15 @@ def add_room(path):
 
 def create_room(info_room):
     return {
-        "room_id": {info_room[0]},
-        "name": {info_room[1]},
-        "difficulty": {info_room[2]},
-        "duration": {info_room[3]},
-        "min_players": {info_room[4]},
-        "max_players": {info_room[5]},
-        "price_per_player": {info_room[6]},
-        "is_active": {info_room[7]}}
+        "room_id": info_room[0],
+        "name": info_room[1],
+        "difficulty": info_room[2],
+        "duration": info_room[3],
+        "min_players": info_room[4],
+        "max_players": info_room[5],
+        "price_per_player": info_room[6],
+        "is_active": True
+        }
 
 def get_info_room(rooms):
     status_loop = True
@@ -29,9 +30,8 @@ def get_info_room(rooms):
         min_players = get_num("enter min_players")
         max_players = get_num("enter max_players")
         price_per_player = get_num("enter price_per_player")
-        is_active = bool(get_str("enter is_active [True,False]"))
-        return [room_id,name,difficulty,duration,min_players,max_players,price_per_player,is_active]
-
+        return [room_id,name,difficulty,duration,min_players,max_players,price_per_player]
+    
 def check_difficulty():
     status_loop = True
     while status_loop:
