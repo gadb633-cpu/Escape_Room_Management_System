@@ -8,7 +8,7 @@ def get_str(msg):
             continue
         status_loop = False
         return name
-        
+
 def get_num(msg):
     status_loop = True
     while status_loop:
