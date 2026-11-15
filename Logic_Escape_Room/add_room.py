@@ -6,7 +6,7 @@ def add_room(path):
     info_room = get_info_room(rooms)
     new_room = create_room(info_room)
     dump_to_json(path,new_room)
-    print("ok")
+    return "Added successfully"
 
 def create_room(info_room):
     return {
@@ -21,16 +21,14 @@ def create_room(info_room):
         }
 
 def get_info_room(rooms):
-    status_loop = True
-    while status_loop:
-        room_id = add_id(rooms)
-        name = get_str("enter name room")
-        difficulty = check_difficulty()
-        duration = get_num("enter duration")
-        min_players = get_num("enter min_players")
-        max_players = get_num("enter max_players")
-        price_per_player = get_num("enter price_per_player")
-        return [room_id,name,difficulty,duration,min_players,max_players,price_per_player]
+    room_id = add_id(rooms)
+    name = get_str("enter name room")
+    difficulty = check_difficulty()
+    duration = get_num("enter duration")
+    min_players = get_num("enter min_players")
+    max_players = get_num("enter max_players")
+    price_per_player = get_num("enter price_per_player")
+    return [room_id,name,difficulty,duration,min_players,max_players,price_per_player]
     
 def check_difficulty():
     status_loop = True

@@ -15,3 +15,8 @@ def dump_to_json(path,new_item):
     with open(path, "w") as file:
         data2 = json.dumps(data,indent=4)
         file.write(data2)
+
+def update_json(path,list_rooms):
+    with open(path, "w") as file:
+        data = json.dumps(list_rooms,indent=4)
+        file.write(data)
