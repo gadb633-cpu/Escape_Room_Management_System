@@ -10,7 +10,7 @@ def order_management():
         choice = get_num("enter your choice")
         match choice:
             case 1:
-                add_order("./db/rooms.json","./db/bookings.json")
+                print(add_order("./db/rooms.json","./db/bookings.json"))
             case 2:
                 display_all_items("./db/bookings.json")
             case 3:

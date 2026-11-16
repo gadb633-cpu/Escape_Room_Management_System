@@ -1,6 +1,6 @@
 from Helper_functions_and_validations.Handles_JSON import load_from_json,dump_to_json
 from Helper_functions_and_validations.inputs import get_num,get_str
-from datetime import datetime,timedelta,time
+from datetime import datetime,time
 
 def add_order(path_room,path_order):
     rooms = load_from_json(path_room)
@@ -22,6 +22,7 @@ def get_info_order(orders,rooms):
             continue
         while status_loop:
             booking_date = get_str("enter booking_date")
+            day = check_day(booking_date)
             if check_format_input(booking_date,'%Y-%M-%d') == False:
                 continue
             if is_a_future_date(booking_date) == False:
@@ -36,7 +37,7 @@ def get_info_order(orders,rooms):
                 continue
             if is_have_anther_order(orders,room,room_id,booking_date,list_time) == False:
                 continue
-            total_price = calculate_price(Number_of_people,room["price_per_player"])
+            total_price = calculate_price(Number_of_people,room["price_per_player"],day)
             status_loop = False
     return [order_id,customer_name,room_id,booking_date,start_time,Number_of_people,total_price]
 
@@ -68,13 +69,28 @@ def is_have_anther_order(orders,room,room_id,booking_date,list_time:list):
                         return False
     return True 
 
-def calculate_price(number_of_people,price_per_player): 
-    if 1 <= number_of_people <=4 :
-        return number_of_people*price_per_player
-    elif 5<= number_of_people <=6:
-        return (number_of_people*price_per_player) - ((number_of_people*price_per_player)*0.10)
-    elif number_of_people >=7:
-        return (number_of_people*price_per_player) - ((number_of_people*price_per_player)*0.15)
+def check_day(booking_date):
+    time_date = datetime.strptime(booking_date,'%Y-%M-%d')
+    return time_date.strftime("%A")
+
+def calculate_price(number_of_people,price_per_player,day): 
+    if day.lower() in ["friday","saturday"]:
+        if 1 <= number_of_people <=4 :
+            price = number_of_people*price_per_player
+            return price + price*0.15
+        elif 5<= number_of_people <=6:
+            price = ((number_of_people*price_per_player) - ((number_of_people*price_per_player)*0.10))
+            return price + price*0.15
+        elif number_of_people >=7:
+            price = ((number_of_people*price_per_player) - ((number_of_people*price_per_player)*0.15))
+            return price + price*0.15
+    else:
+        if 1 <= number_of_people <=4 :
+            return number_of_people*price_per_player
+        elif 5<= number_of_people <=6:
+            return (number_of_people*price_per_player) - ((number_of_people*price_per_player)*0.10)
+        elif number_of_people >=7:
+            return (number_of_people*price_per_player) - ((number_of_people*price_per_player)*0.15)
 
 def is_enough_time_before_closing(hour,room):
     if 22-(room["duration"]/60) >=hour:
@@ -140,4 +156,3 @@ def create_order(info_order):
         "status": "Active",
         "cancellation_fee": 0.0
     }
-# add_order("./db/rooms.json","./db/bookings.json",rooms,orders)
