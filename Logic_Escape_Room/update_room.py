@@ -1,5 +1,5 @@
 from Helper_functions_and_validations.inputs import get_num,get_str
-from Logic_Escape_Room.Handles_JSON import load_from_json,update_json
+from Helper_functions_and_validations.Handles_JSON import load_from_json,update_json
 from Logic_Escape_Room.add_room import check_difficulty
 
 def update_room(path):

@@ -1,4 +1,4 @@
-from Logic_Escape_Room.Handles_JSON import dump_to_json,load_from_json
+from Helper_functions_and_validations.Handles_JSON import dump_to_json,load_from_json
 from Helper_functions_and_validations.inputs import get_num,get_str
 from display.display_result import display_result
 
