@@ -130,8 +130,9 @@ def check_is_available(room):
     return False
 
 def check_num_people(room,number_of_people):
-    if room["min_players"] <= number_of_people >= room["max_players"]:
-        return True
+    if room["min_players"] <= number_of_people:
+        if number_of_people <= room["max_players"]:
+            return True
     return False
 
 def check_is_room_exist(rooms,room_id):
