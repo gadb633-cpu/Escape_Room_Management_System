@@ -12,7 +12,7 @@ def update_room(path):
             room[data_to_change[0]] = data_to_change[1]
             update_json(path,rooms)
             return "Updated successfully!"
-    return "not found!!"     
+    return "not found!!"  
 
 def choice_update():
     status_loop = True

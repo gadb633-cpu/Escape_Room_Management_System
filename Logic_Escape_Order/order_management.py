@@ -3,6 +3,7 @@ from Helper_functions_and_validations.inputs import get_num,get_str
 from display.display_all_items  import display_all_items
 from display.display_item import display_item
 from Logic_Escape_Order.create_order import add_order
+from Logic_Escape_Order.update_order import update_order
 def order_management():
     status_loop = True
     while status_loop:
@@ -20,7 +21,7 @@ def order_management():
             case 5:
                 display_item("booking_date","./db/bookings.json")
             case 6:
-                pass
+                print(update_order("./db/rooms.json","./db/bookings.json"))
             case 7:
                 pass
             case 8:
