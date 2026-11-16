@@ -2,7 +2,7 @@ from display.shaw_orders_menu import shaw_orders_menu
 from Helper_functions_and_validations.inputs import get_num,get_str
 from display.display_all_items  import display_all_items
 from display.display_item import display_item
-
+from Logic_Escape_Order.create_order import add_order
 def order_management():
     status_loop = True
     while status_loop:
@@ -10,7 +10,7 @@ def order_management():
         choice = get_num("enter your choice")
         match choice:
             case 1:
-                pass
+                add_order("./db/rooms.json","./db/bookings.json")
             case 2:
                 display_all_items("./db/bookings.json")
             case 3:
