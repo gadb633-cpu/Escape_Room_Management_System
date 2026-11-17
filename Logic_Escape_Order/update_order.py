@@ -8,6 +8,8 @@ def update_order(path_rooms,path_orders):
     booking_id = f"B{get_num("enter booking_id,(enter only num)"):03d}"
     the_order = get_order(orders,booking_id)
     the_room = get_room(rooms,the_order["room_id"])
+    if check_is_available(the_room) == False:
+        return "is not active !!"
     list_new_item = choice_update(the_order,the_room,orders)
     the_order[list_new_item[0]]= list_new_item[1]
     the_order["total_price"] = list_new_item[2]
