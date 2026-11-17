@@ -15,7 +15,7 @@
         "customer_name": "Sarah Levi",
         "room_id": "R001",
         "booking_date": "2026-11-14",
-        "start_time": "11:15",
+        "start_time": "15:30",
         "players": 5,
         "total_price": 360.0,
         "status": "Active",
@@ -24,7 +24,7 @@
     {
         "booking_id": "B003",
         "customer_name": "Moshe Israel",
-        "room_id": "R002",
+        "room_id": "R001",
         "booking_date": "2026-11-14",
         "start_time": "10:00",
         "players": 5,

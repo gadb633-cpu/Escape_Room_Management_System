@@ -53,7 +53,8 @@ def choice_update(the_order,the_room,orders):
                     continue
                 if is_enough_time_before_closing(list_time[0]+(list_time[1]/60),the_room) == False:
                     continue
-                if is_have_anther_order(orders,the_room,the_order["room_id"],booking_date,list_time) == False:
+                if is_have_anther_order(orders,the_room,the_order["room_id"],the_order["booking_date"],list_time) == False:
+                    print("The time slot is not available!")
                     continue
                 return [choice,start_time,the_order["total_price"]]
             case "players":
