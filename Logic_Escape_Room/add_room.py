@@ -1,5 +1,5 @@
 from Helper_functions_and_validations.inputs import get_num,get_str
-from Logic_Escape_Room.Handles_JSON import load_from_json,dump_to_json
+from Helper_functions_and_validations.Handles_JSON import load_from_json,dump_to_json
 
 def add_room(path):
     rooms = load_from_json(path)
@@ -21,7 +21,7 @@ def create_room(info_room):
         }
 
 def get_info_room(rooms):
-    room_id = add_id(rooms)
+    room_id = add_room_id(rooms)
     name = get_str("enter name room")
     difficulty = check_difficulty()
     duration = get_num("enter duration")
@@ -39,6 +39,6 @@ def check_difficulty():
             return difficulty
         print("only [Easy,Medium,Hard] !!!")
         
-def add_id(rooms:list):
+def add_room_id(rooms:list):
     num_id = len(rooms) +1
     return f"R{num_id:03d}"

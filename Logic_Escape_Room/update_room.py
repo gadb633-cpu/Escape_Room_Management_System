@@ -1,5 +1,5 @@
 from Helper_functions_and_validations.inputs import get_num,get_str
-from Logic_Escape_Room.Handles_JSON import load_from_json,update_json
+from Helper_functions_and_validations.Handles_JSON import load_from_json,update_json
 from Logic_Escape_Room.add_room import check_difficulty
 
 def update_room(path):
@@ -12,7 +12,7 @@ def update_room(path):
             room[data_to_change[0]] = data_to_change[1]
             update_json(path,rooms)
             return "Updated successfully!"
-    return "not found!!"     
+    return "not found!!"  
 
 def choice_update():
     status_loop = True
