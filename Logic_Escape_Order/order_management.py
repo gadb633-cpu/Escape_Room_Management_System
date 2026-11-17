@@ -4,6 +4,7 @@ from display.display_all_items  import display_all_items
 from display.display_item import display_item
 from Logic_Escape_Order.create_order import add_order
 from Logic_Escape_Order.update_order import update_order
+from Logic_Escape_Order.cancel_order import cancel_order
 def order_management():
     status_loop = True
     while status_loop:
@@ -23,7 +24,7 @@ def order_management():
             case 6:
                 print(update_order("./db/rooms.json","./db/bookings.json"))
             case 7:
-                pass
+                print(cancel_order("./db/bookings.json"))
             case 8:
                 status_loop = False    
             case _:

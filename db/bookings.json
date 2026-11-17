@@ -18,8 +18,8 @@
         "start_time": "15:30",
         "players": 5,
         "total_price": 360.0,
-        "status": "Active",
-        "cancellation_fee": 0.0
+        "status": "Cancelled",
+        "cancellation_fee": 0
     },
     {
         "booking_id": "B003",
@@ -36,12 +36,12 @@
         "booking_id": "B004",
         "customer_name": "Rachel Mizrahi",
         "room_id": "R003",
-        "booking_date": "2026-11-15",
+        "booking_date": "2026-11-17",
         "start_time": "14:00",
         "players": 8,
         "total_price": 612.0,
-        "status": "Active",
-        "cancellation_fee": 0.0
+        "status": "Cancelled",
+        "cancellation_fee": 306.0
     },
     {
         "booking_id": "B005",
